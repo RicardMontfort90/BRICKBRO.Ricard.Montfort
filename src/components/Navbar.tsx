@@ -4,7 +4,6 @@ import brickbroLogo from "../images/BRICKBRO_LOGO.png";
 
 
 export default function Navbar(): ReactElement {
-    return <div>Navbar view</div>;
     return (
         <div>
             <Link to="/">
