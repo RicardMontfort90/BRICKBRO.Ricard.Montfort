@@ -8,7 +8,7 @@ export default function SearchBar(): ReactElement {
             placeholder='City, address, postcode...'
             type='text'
             />
-            <button className='searchbar_button'>Search</button>
+            <button className='search_button'>Search</button>
         </div>
     );
 };

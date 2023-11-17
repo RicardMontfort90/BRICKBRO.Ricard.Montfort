@@ -1,23 +1,48 @@
 /* BASIC MODEL APP */
+:root {
+  --primary-color: hsl(0, 0%, 75%); /* NAVBAR */
+  --second-color: hsl(0, 0%, 90%);  /* SEARCH */
+}
+
+
 
 .app {
   text-align: center;
 }
 
+
+/* src/components/Navbar.tsx */
 .app-logo {
-  height: 150px;
+  height: 100px;
   pointer-events: none;
+  margin-top: 50px;
+  margin-bottom: 70px;
 }
 
 
+/* src/components/SearchBar.tsx */
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.SearchBar_container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 40px;
+}
+
+.searchbar_input {
+  background-color: var(--primary-color);
+  width: 400px;
+  border-radius: 10%;
+}
+
+.search_button {
+  background-color: var(--second-color);
+  border-radius: 10%;
+  padding: 10px 65px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.search_button:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgb(229, 168, 27);
 }
