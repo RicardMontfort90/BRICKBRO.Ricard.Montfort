@@ -29,7 +29,7 @@ const Maps: React.FunctionComponent = (): ReactElement => {
         <>
             <p>Welcome to the Map!</p>
             <SearchBar onSearch={handeleSearch} />
-            <LoadScript googleMapsApiKey="AIzaSyBRrl4SHTxUqyeTJjyE165b0FY45mZVaGc">
+            <LoadScript googleMapsApiKey="AIzaSyCW78wMfEvaIPxjaRy7o6u4nvhcr6vmcZI">
                 <GoogleMap
                     mapContainerStyle={mapsSize}
                     zoom={20}

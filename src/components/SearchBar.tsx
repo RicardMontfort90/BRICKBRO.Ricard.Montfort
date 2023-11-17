@@ -15,7 +15,7 @@ interface SearchBarProps {
                 const response = await fetch(
                     `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(
                     searchText
-                    )}&key=AIzaSyBRrl4SHTxUqyeTJjyE165b0FY45mZVaGc`
+                    )}&key=AIzaSyCW78wMfEvaIPxjaRy7o6u4nvhcr6vmcZI`
                 );
                 if (!response.ok) {
                     console.error('Failed to fetch geolocation data.');
