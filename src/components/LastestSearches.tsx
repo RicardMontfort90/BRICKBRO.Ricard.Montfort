@@ -1,6 +1,6 @@
 import React, { ReactElement } from "react";
 
-const LastesSearches: React.FC = (): ReactElement => {
+const LastesSearches: React.FunctionComponent = (): ReactElement => {
     return (
         <div>
             <h5>Lastest Searches</h5>

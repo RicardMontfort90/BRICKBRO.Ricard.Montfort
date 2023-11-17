@@ -5,7 +5,7 @@ interface SearchBarProps {
     onSearch: (location: { lat: number; lng: number }) => void;
     };
 
-    const SearchBar: React.FC<SearchBarProps> = ({ onSearch }): ReactElement => {
+    const SearchBar: React.FunctionComponent<SearchBarProps> = ({ onSearch }): ReactElement => {
         const [searchText, setSearchText] = useState('');
 
         const handleSearchClick = async () => {

@@ -1,10 +1,16 @@
-import { ReactElement } from "react";
+import React, { ReactElement } from "react";
 import SearchBar from "../components/SearchBar";
 
-export default function MainPage(): ReactElement {
+const MainPage: React.FunctionComponent = (): ReactElement => {
+    const handeleSearch = (location: {lat: number; lng: number}) => {
+        console.info('Location:', location)
+    };
+    
     return (
         <div>
-            <SearchBar />
+            <SearchBar onSearch={handeleSearch}/>
         </div>
     );
 };
+
+export default MainPage;

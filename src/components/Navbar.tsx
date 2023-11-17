@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import brickbroLogo from "../images/BRICKBRO_LOGO.png";
 
 
-const Navbar: React.FC= ():  ReactElement => {
+const Navbar: React.FunctionComponent= ():  ReactElement => {
     return (
         <div>
             <Link to="/">
