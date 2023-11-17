@@ -1,4 +1,5 @@
 import React, { ReactElement, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 interface SearchBarProps {
@@ -7,6 +8,7 @@ interface SearchBarProps {
 
     const SearchBar: React.FunctionComponent<SearchBarProps> = ({ onSearch }): ReactElement => {
         const [searchText, setSearchText] = useState('');
+        const navigate = useNavigate();
 
         const handleSearchClick = async () => {
             try {
@@ -24,6 +26,7 @@ interface SearchBarProps {
                     const location = data.results[0].geometry?.location;
                     if (location) {
                     onSearch(location);
+                    navigate('/map');
                     } else {
                         console.error(
                             'Geocoding API response does not contain location data.'
