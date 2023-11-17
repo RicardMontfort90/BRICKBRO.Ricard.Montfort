@@ -20,7 +20,7 @@ export default function Maps(): ReactElement {
         <>
             <p>Welcome to the Map!</p>
             <SearchBar />
-            <LoadScript googleMapsApiKey="YOUR_KEY">
+            <LoadScript googleMapsApiKey="AIzaSyBRrl4SHTxUqyeTJjyE165b0FY45mZVaGc">
                 <GoogleMap
                     mapContainerStyle={mapsSize}
                     zoom={20}
