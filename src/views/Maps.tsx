@@ -1,33 +1,47 @@
-import { ReactElement } from "react";
+import React, { ReactElement, useState } from "react";
 import LastesSearches from "../components/LastestSearches";
 import SearchBar from "../components/SearchBar";
-import { GoogleMap, LoadScript } from "@react-google-maps/api";
+import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 
-export default function Maps(): ReactElement {
-    // Sagrada Familia, Barcelona
+
+const Maps: React.FunctionComponent = (): ReactElement => {
+     // Sagrada Familia, Barcelona
     const sagradaFamilia = {
         lat: 41.40366478082409,
         lng: 2.1743983200647503
     };
+
+    const [mapSagradaFamilia, setMapSagradaFamilia] = useState(sagradaFamilia);
+    const [markerPosition, setMarkerPosition] = useState(sagradaFamilia);
     
     // Maps Size
     const mapsSize = {
-        height: '300px',
+        height: '400px',
         margin: '100px'
+    };
+
+    const handeleSearch = (location: { lat: number; lng: number }) => {
+        setMapSagradaFamilia(location)
+        setMarkerPosition(location)
     };
 
     return (
         <>
             <p>Welcome to the Map!</p>
-            <SearchBar />
+            <SearchBar onSearch={handeleSearch} />
             <LoadScript googleMapsApiKey="AIzaSyBRrl4SHTxUqyeTJjyE165b0FY45mZVaGc">
                 <GoogleMap
                     mapContainerStyle={mapsSize}
                     zoom={20}
-                    center={sagradaFamilia}
-                ></GoogleMap>
+                    center={mapSagradaFamilia}
+                    
+                >
+                    {markerPosition && <Marker position={markerPosition} />}
+                </GoogleMap>
             </LoadScript>
             <LastesSearches />
         </>
     );
 };
+
+export default Maps;
