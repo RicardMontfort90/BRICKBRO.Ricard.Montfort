@@ -1,7 +1,7 @@
 /* BASIC MODEL APP */
 :root {
-  --primary-color: hsl(0, 0%, 75%); /* NAVBAR */
-  --second-color: hsl(0, 0%, 90%);  /* SEARCH */
+  --primary-color: hsl(0, 0%, 75%); /* SEARCHBAR */
+  --second-color: hsl(0, 0%, 90%);  /* SEARCHBUTTON */
 }
 
 
@@ -16,6 +16,7 @@
   pointer-events: none;
   margin-top: 50px;
   margin-bottom: 70px;
+  
 }
 
 
@@ -30,12 +31,12 @@
 .searchbar_input {
   background-color: var(--primary-color);
   width: 400px;
-  border-radius: 10%;
+  border-radius: 10px;
 }
 
 .search_button {
   background-color: var(--second-color);
-  border-radius: 10%;
+  border-radius: 10px;
   padding: 10px 65px;
   cursor: pointer;
   font-size: 20px;

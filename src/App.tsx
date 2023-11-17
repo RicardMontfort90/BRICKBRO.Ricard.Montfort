@@ -6,7 +6,7 @@ import MainPage from './views/MainPage';
 import ErrorPage from './views/ErrorPage';
 import Maps from './views/Maps';
 
-const App:React.FC = (): ReactElement => {
+const App: React.FC = (): ReactElement => {
   return (
     <div className="app">
       <Navbar />

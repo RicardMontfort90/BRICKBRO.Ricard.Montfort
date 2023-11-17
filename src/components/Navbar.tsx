@@ -1,9 +1,9 @@
-import { ReactElement } from "react";
+import React, { ReactElement } from "react";
 import { Link } from "react-router-dom";
 import brickbroLogo from "../images/BRICKBRO_LOGO.png";
 
 
-export default function Navbar(): ReactElement {
+const Navbar: React.FC= ():  ReactElement => {
     return (
         <div>
             <Link to="/">
@@ -11,4 +11,6 @@ export default function Navbar(): ReactElement {
             </Link>
         </div>
     );
-}
+};
+
+export default Navbar;
