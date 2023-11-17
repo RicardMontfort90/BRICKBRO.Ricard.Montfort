@@ -1,7 +1,9 @@
 /* BASIC MODEL APP */
 :root {
-  --primary-color: hsl(0, 0%, 75%); /* SEARCHBAR */
-  --second-color: hsl(0, 0%, 90%);  /* SEARCHBUTTON */
+  --primary-color: hsl(0, 0%, 75%); 
+  --second-color: hsl(0, 0%, 90%);  
+  --third-color: hsl(41, 79%, 50%);
+  --fourth-color:  hsl(220, 62%, 52%);
 }
 
 
@@ -9,14 +11,32 @@
   text-align: center;
 }
 
+/* HOME */
+
+/* src/views/MainPage.tsx */
+.searchButton_home {
+  background-color: var(--primary-color);
+  padding: 10px 30px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  width: auto;
+  transition: all 2.0s;
+}
+
+.searchButton_home:hover {
+  transform: scale(2,2);
+  color: rgb(255, 255, 255);
+  background-color: var(--third-color);
+}
+
 
 /* src/components/Navbar.tsx */
 .app-logo {
   height: 100px;
-  pointer-events: none;
   margin-top: 50px;
   margin-bottom: 70px;
-  
+  cursor: pointer;
 }
 
 
@@ -44,5 +64,5 @@
 
 .search_button:hover {
   color: rgb(255, 255, 255);
-  background-color: rgb(229, 168, 27);
+  background-color: var(--third-color);
 }

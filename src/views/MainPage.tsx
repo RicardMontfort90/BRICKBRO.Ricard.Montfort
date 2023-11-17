@@ -4,9 +4,10 @@ import { Link } from "react-router-dom";
 const MainPage: React.FunctionComponent = (): ReactElement => {
     return (
         <div>
-            <h3>Wellcome to the App</h3>
+            <h2>Welcome to the App 💻</h2>
+            <h4>By Ricard Montfort Romero</h4>
             <Link to="/map">
-                <button className="searchButton_home">Busqueda</button>
+                <button className="searchButton_home">Empezar</button>
             </Link>
         </div>
     );
