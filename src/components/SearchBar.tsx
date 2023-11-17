@@ -44,7 +44,7 @@ interface SearchBarProps {
         <div className='SearchBar_container'>
             <input 
                 className='searchbar_input'
-                placeholder='City, address, postcode...'
+                placeholder='🔍 City, address, postcode...'
                 type='text'
                 value={searchText}
                 onChange={(e) => setSearchText(e.target.value)}

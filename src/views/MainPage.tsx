@@ -1,14 +1,13 @@
 import React, { ReactElement } from "react";
-import SearchBar from "../components/SearchBar";
+import { Link } from "react-router-dom";
 
 const MainPage: React.FunctionComponent = (): ReactElement => {
-    const handeleSearch = (location: {lat: number; lng: number}) => {
-        console.info('Location:', location)
-    };
-    
     return (
         <div>
-            <SearchBar onSearch={handeleSearch}/>
+            <h3>Wellcome to the App</h3>
+            <Link to="/map">
+                <button className="searchButton_home">Busqueda</button>
+            </Link>
         </div>
     );
 };
