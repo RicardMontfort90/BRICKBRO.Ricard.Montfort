@@ -1,7 +1,11 @@
-import { ReactElement } from "react";
+import React, { ReactElement } from "react";
 
-export default function LastesSearches() : ReactElement {
+const LastesSearches: React.FC = (): ReactElement => {
     return (
-    <div><h5>Lastest Searches</h5></div>
+        <div>
+            <h5>Lastest Searches</h5>
+        </div>
     );
 };
+
+export default LastesSearches;
