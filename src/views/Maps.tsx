@@ -1,5 +1,6 @@
 import React, { ReactElement, useState } from "react";
 import SearchBar from "../components/SearchBar";
+import LastesSearches from "../components/LastestSearches";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 import { APIKEY } from "../APIKEY/credentials"; 
 
@@ -20,9 +21,12 @@ const Maps: React.FunctionComponent = (): ReactElement => {
         margin: '50px'
     };
 
+    const [searched, setSearched] = useState(false);
+
     const handleSearch = async (location: { lat: number; lng: number }) => {
         setMapSagradaFamilia(location);
         setMarkerPosition(location);
+        setSearched(true);
         
     };
 
@@ -30,13 +34,14 @@ const Maps: React.FunctionComponent = (): ReactElement => {
         <>
             <p>Welcome to the Map!</p>
             <SearchBar onSearch={handleSearch} />
-            {/*searched &&  */ mapSagradaFamilia && markerPosition && (
+            {searched &&   mapSagradaFamilia && markerPosition && (
             <LoadScript googleMapsApiKey={APIKEY}>
                 <GoogleMap mapContainerStyle={mapsSize} zoom={20} center={mapSagradaFamilia}>
                     {markerPosition && <Marker position={markerPosition} />}
                 </GoogleMap>
             </LoadScript>
             )}
+            <LastesSearches />
         </>
     );
 };
