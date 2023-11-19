@@ -24,6 +24,7 @@ const Maps: React.FunctionComponent = (): ReactElement => {
 
     // Maps Size
     const mapsSize = {
+        
         height: '500px',
         margin: '50px'
     };
@@ -67,7 +68,9 @@ const Maps: React.FunctionComponent = (): ReactElement => {
                     </GoogleMap>
             </LoadScript>
             )}
-            <LastSearches lastSearche={lastSearche} />
+            <div className="map">
+                <LastSearches lastSearche={lastSearche} />
+            </div>
         </>
     );
 };

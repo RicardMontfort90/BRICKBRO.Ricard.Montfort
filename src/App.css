@@ -113,7 +113,7 @@ span {
   border-radius: 10px;
   padding: 10px 25px;
   margin: 20px 0;
-  width: 85%;
+  width: 88%;
 }
 
 .lastSearches-container h4 {
@@ -142,3 +142,6 @@ span {
   color: white;
   background-color: var(--third-color);
 }
+
+/* MAP */
+
