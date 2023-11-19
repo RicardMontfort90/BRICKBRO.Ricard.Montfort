@@ -13,6 +13,30 @@
 
 /* HOME */
 
+span {
+  display: block;
+  margin: 20px auto;
+  font-family: monospace;
+  white-space: nowrap;
+  border-right: 4px solid;
+  width: 18ch;
+
+  animation: 
+  typing 3s steps(18) infinite alternate-reverse,
+  blink .5s step-start alternate;
+  overflow: hidden;
+  color: var(--third-color);
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to {width: 23ch;}
+}
+
+@keyframes blink {
+  50% {border-color: transparent;}
+} 
+
 /* src/views/MainPage.tsx */
 .searchButton_home {
   background-color: var(--primary-color);
@@ -21,12 +45,12 @@
   border-radius: 10px;
   cursor: pointer;
   width: auto;
-  transition: all 2.0s;
+  transition: all 1.0s;
 }
 
 .searchButton_home:hover {
-  transform: scale(2,2);
-  color: rgb(255, 255, 255);
+  transform: scale(-1.01,1);
+  color: white;
   background-color: var(--third-color);
 }
 
@@ -50,13 +74,17 @@
 
 .searchbar_input {
   background-color: var(--primary-color);
-  width: 400px;
+  width: 600px;
+  border: 0px; 
   border-radius: 10px;
+  outline: 10px solid var(--second-color);
+  text-align: center;
 }
 
 
 .search_button {
   background-color: var(--second-color);
+  border: 0px;
   border-radius: 10px;
   padding: 10px 65px;
   cursor: pointer;
@@ -64,6 +92,50 @@
 }
 
 .search_button:hover {
-  color: rgb(255, 255, 255);
+  color: white;
+  background-color: var(--third-color);
+}
+
+.lastSearches-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 0px;
+  text-align: left;
+}
+
+.lastSearches-container ul {
+  margin-left: -35px;
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+  padding: 10px 25px;
+  margin: 20px 0;
+  width: 85%;
+}
+
+.lastSearches-container h4 {
+  color: var(--primary-color);
+  text-align: left;
+}
+
+.lastSearches-container ul li {
+  list-style-type: none;
+  margin: 10px;
+}
+
+
+/* ERROPAGE */ 
+
+.errorButton {
+  background-color: var(--second-color);
+  border: 0px;
+  border-radius: 10px;
+  padding: 10px 65px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.errorButton:hover {
+  color: white;
   background-color: var(--third-color);
 }

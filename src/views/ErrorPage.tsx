@@ -4,8 +4,10 @@ import { Link } from 'react-router-dom';
 const ErrorPage: React.FunctionComponent = (): ReactElement => {
     return (
         <div>
-            <h5> hhhmmm... Esta página no existe... </h5>
-            <Link to='/'>Volver...</Link>
+            <h1>🥸hhhmmm... Esta página no existe... </h1>
+            <Link to='/'>
+                <button className='errorButton'>👈🏻Volver...</button>
+            </Link>
         </div>
     );
 };

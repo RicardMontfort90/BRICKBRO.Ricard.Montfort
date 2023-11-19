@@ -4,36 +4,44 @@ import { apiLink, APIKEY } from '../APIKEY/credentials';
 
 
 interface SearchBarProps {
-    onSearch: (location: { lat: number; lng: number }) => void;
-    };
+    onSearch: (
+        location: { lat: number; lng: number },
+        searchString: string
+    ) => void;
+};
 
     const SearchBar: React.FunctionComponent<SearchBarProps> = ({ onSearch }): ReactElement => {
         const [searchText, setSearchText] = useState('');
+        const [errorMessage, setErrorMessage] = useState<string | number |boolean>('');
+        
         const navigate = useNavigate();
 
         const handleSearchClick = async () => {
+            /*  prueba para que no se dupliquen resultados */
+            if (!searchText.trim()) {
+                setErrorMessage('Please type a valid address/city.');
+                return;
+              }
+            /*                                             */
             try {
                 const response = await fetch(
                     `${apiLink}${encodeURIComponent(searchText)}&key=${APIKEY}`
                 );
+
                 if (!response.ok) {
-                    console.error('Failed to fetch geolocation data.');
+                    setErrorMessage('Error geolocation data.');
                 };
+
                 const data = await response.json();
-                    console.log('Geocoding API response:', data);
                 if (data.results && data.results.length > 0) {
                     const location = data.results[0].geometry?.location;
                     if (location) {
-                    onSearch(location);
+                    setErrorMessage('');
+                    onSearch(location, searchText);
                     navigate('/map');
-                    } else {
-                        console.error(
-                            'Geocoding API response does not contain location data.'
-                        );
-                    };
-                } else {
-                    console.error('Geocoding API response contains no results.');
-                };
+                    setSearchText('');
+                    }; 
+                }; 
             } catch (error) {
                 console.error('Error searching for the location:', error);
             };
@@ -51,6 +59,7 @@ interface SearchBarProps {
             <button className='search_button' onClick={handleSearchClick}>
                 Search
             </button>
+        {errorMessage && <p className="error-message">{errorMessage}</p>}
         </div>
     );
 };
