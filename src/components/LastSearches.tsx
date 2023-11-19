@@ -16,7 +16,7 @@ const LastSearches: React.FunctionComponent<LastSearchesProp> = ({
     return (
         <div className="lastSearches-container">  
             <ul>
-                <h4>Búsquedas</h4>
+                <h4>Searches</h4>
                 {displayedSearches.length > 0 ? (
                     displayedSearches.map((searchString, index) => (
                 <li key={index}>

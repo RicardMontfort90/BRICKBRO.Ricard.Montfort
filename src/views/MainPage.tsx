@@ -6,9 +6,9 @@ const MainPage: React.FunctionComponent = (): ReactElement => {
         <div className="MainPage">
             <h2>Welcome to the App 💻</h2>
             <h4>By Ricard Montfort Romero</h4>
-            <span>¡Click en Empezar!</span>
+            <span>¡Click the Button!</span>
             <Link to="/map">
-                <button className="searchButton_home">Empezar</button>
+                <button className="searchButton_home">⭐</button>
             </Link>
         </div>
     );
